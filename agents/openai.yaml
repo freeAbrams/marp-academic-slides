@@ -1,0 +1,4 @@
+interface:
+  display_name: "Marp Academic Slides"
+  short_description: "Create clean academic Marp slide decks"
+  default_prompt: "Use $marp-academic-slides to create a clean academic Marp slide deck from my outline."

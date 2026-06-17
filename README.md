@@ -1,0 +1,51 @@
+# Marp Academic Slides
+
+`marp-academic-slides` は、研究発表・講義・演習向けの Marp Markdown スライドを、落ち着いた学術スタイルで作成・改訂するための Codex skill です。
+
+## 目的
+
+- アウトライン、講義計画、論文要旨、研究メモを Marp スライドへ変換する
+- 主張型タイトル、簡潔な本文、表、コールアウトを使って説明しやすいデッキに整える
+- 白背景・16:9・日本語対応フォントを前提に、編集しやすい Markdown テンプレートを提供する
+
+## 構成
+
+```text
+.
+├── SKILL.md
+├── agents/
+│   └── openai.yaml
+├── assets/
+│   └── marp-template.md
+└── references/
+    └── style-guide.md
+```
+
+- `SKILL.md`: skill のトリガー条件と基本ワークフロー
+- `agents/openai.yaml`: Codex UI 向けの表示名、短い説明、既定プロンプト
+- `assets/marp-template.md`: 新規デッキ作成時に使う Marp テンプレート
+- `references/style-guide.md`: デザイン、文章、QA の詳細ガイド
+
+## 使い方
+
+Codex で次のように依頼します。
+
+```text
+Use $marp-academic-slides to create a clean academic Marp slide deck from my outline.
+```
+
+既存デッキを改訂する場合は、対象ファイルと目的を指定します。
+
+```text
+Use $marp-academic-slides to revise this Marp deck for a 10-minute research talk.
+```
+
+## 開発メモ
+
+skill を更新したら、必要に応じて次を確認します。
+
+```bash
+python /path/to/quick_validate.py /path/to/marp-academic-slides
+```
+
+Marp CLI が利用できる環境では、生成したデッキを PDF または HTML にレンダリングし、文字あふれ、長すぎる URL、根拠のない主張、CSS の崩れを確認します。
